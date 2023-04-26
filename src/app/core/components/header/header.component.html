@@ -1,0 +1,27 @@
+<div class="header">
+  <div class="header-container">
+    <div class="header__auth">
+      <div class="header__auth__name">
+        {{ userService.getUserName() ? userService.getUserName() : "Name" }}
+      </div>
+      <a class="header__auth__link">
+        <mat-icon class="header__auth__icon">account_circle</mat-icon>
+      </a>
+
+      <button
+        class="header__auth__btn"
+        *ngIf="userService.currentStatus | async"
+        (click)="clickLogOut()"
+      >
+        LogOut
+      </button>
+
+      <button
+        class="header__auth__btn btn-login"
+        *ngIf="(userService.currentStatus | async) === false"
+      >
+        LogIn
+      </button>
+    </div>
+  </div>
+</div>

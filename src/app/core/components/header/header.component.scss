@@ -1,0 +1,68 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  width: 100vw;
+  background-color: rgb(207 207 210 / 65%);
+}
+
+.header-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__auth {
+  display: flex;
+  align-items: center;
+
+  .header__auth__name {
+    font-size: 14px;
+    margin-right: 10px;
+  }
+
+  .header__auth__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header__auth__icon {
+    width: auto;
+    height: auto;
+    font-size: 40px;
+    margin: 0 20px;
+    color: rgba(47, 128, 237, 1);
+    cursor: pointer;
+  }
+
+  .header__auth__icon:active {
+    color: rgb(12, 79, 166);
+  }
+
+  .header__auth__btn {
+    width: auto;
+    padding: 5px;
+    height: 25px;
+    border: 0;
+    background-color: rgb(212, 29, 29);
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+  .header__auth__btn:active {
+    background-color: rgb(151, 21, 21);
+  }
+
+  .btn-login {
+    background-color: rgba(47, 128, 237, 1);
+  }
+
+  .btn-login:active {
+    background-color: rgb(12, 79, 166);
+  }
+}

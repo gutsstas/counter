@@ -1,0 +1,43 @@
+<div
+  class="modal-background"
+  [ngClass]="{ lookModal: counterService.isVisible }"
+>
+  <div class="modal" *ngIf="current | async as data">
+    <div class="modal__current">
+      <span class="modal__current__text">Current counter:</span>
+      <span class="modal__current__value">{{
+        data.current === 0 ? 1 : data.current
+      }}</span>
+    </div>
+
+    <div class="modal__line"></div>
+
+    <div class="modal__next">
+      <div class="modal__next__text">Next counter:</div>
+      <div class="modal__next__value">
+        {{ data.current === 0 ? 2 : data.current * 2 }}
+      </div>
+    </div>
+
+    <div class="modal__line"></div>
+
+    <div class="modal__btn">
+      <button
+        mat-raised-button
+        color="primary"
+        class="modal__btn__submit"
+        (click)="changeCount(data.current === 0 ? 2 : data.current * 2)"
+      >
+        Submit
+      </button>
+      <button
+        mat-raised-button
+        color="warn"
+        class="modal__btn__cancel"
+        (click)="changeCount(data.current === 0 ? 1 : data.current)"
+      >
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>

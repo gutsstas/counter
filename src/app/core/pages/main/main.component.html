@@ -1,0 +1,18 @@
+<div class="container-main">
+  <div class="main__count">
+    <span class="main__count__text">Count:</span>
+    <span class="main__count__value">{{
+      (counterService.currentData$ | async)?.current
+    }}</span>
+  </div>
+  <button
+    mat-raised-button
+    color="primary"
+    class="main__btn"
+    (click)="counterService.isVisible = true"
+  >
+    Increment
+  </button>
+</div>
+
+<app-modal [current]="counterService.currentData$"></app-modal>
